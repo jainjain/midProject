@@ -16,4 +16,10 @@ class PagesController extends Controller
         $name = $request->name;
         return redirect()->route('thanks',['name' => $name ]);
     }
+    function register() {
+        return view('auth.register');
+    }
+    function login() {
+        return view('auth.login');
+    }
 }

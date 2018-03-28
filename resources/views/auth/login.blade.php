@@ -1,4 +1,4 @@
-@extends('page.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -55,9 +55,7 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
+
                             </div>
                         </div>
                     </form>
