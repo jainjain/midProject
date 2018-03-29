@@ -23,6 +23,15 @@ class CarsTest extends TestCase
 
         $this->assertTrue($car->save());
     }
+    public function testUpdateCar()
+    {
+        $car = car::Find(1);
+        $car->year=2000;
+        car::where('make','honda2018')->delete();
+        $this->assertTrue($car->save());
+
+    }
+
     public function testDeleteCar()
     {
 
@@ -44,6 +53,11 @@ class CarsTest extends TestCase
         $year = (int)$car->year;
         $this->assertInternalType("int",$year);
 
+    }
+    public function testCarMake()
+    {
+        $car = car::Find(1);
+       $this->assertContains($car->make,array('toyota','ford','honda'));
     }
     public function testCarModel()
     {

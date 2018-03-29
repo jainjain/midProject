@@ -22,10 +22,17 @@ class UsersTest extends TestCase
         $user->email = 'test@test12.com';
         $this->assertTrue($user->save());
     }
+    public function testUpdateUser()
+    {
+        $user = User::Find(1);
+        $user->name = 'Steve Smith';
+        $this->assertTrue($user->save());
+
+
+    }
 
     public function testDeleteUser()
     {
-
         User::where('password','123456')->delete();
         $this->assertDatabaseMissing('users', ['password','123456']);
 
